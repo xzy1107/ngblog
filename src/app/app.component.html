@@ -6,33 +6,28 @@
             [(nzCollapsed)]="isCollapsed"
             [nzTrigger]="null">
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
-        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>Ant Design Of Angular</h1>
+      <a href="/">
+        <img src="http://localhost/wp-content/uploads/2020/01/profile_trans.png" alt="logo">
+        <h1>{{siteName}}</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">Welcome</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Monitor</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>Workplace</a>
-          </li>
-        </ul>
+      <li nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'My Blogs' : ''" routerLink="/blogs">
+        <i nz-icon nzType="book"></i>
+        <span>My Blogs</span>
       </li>
-      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>Basic Form</a>
-          </li>
-        </ul>
+      <li nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'My Projects' : ''" routerLink="/projects">
+        <i nz-icon nzType="code"></i>
+        <span>My Projects</span>
+      </li>
+      <li nz-menu-item nz-tooltip nzPlacement="right" [nzTitle]="isCollapsed ? 'About Me' : ''">
+        <i nz-icon nzType="user"></i>
+        <span>About Me</span>
       </li>
     </ul>
+    <p>
+      <i nz-icon nzType="user"></i>
+    </p>
   </nz-sider>
   <nz-layout>
     <nz-header>
@@ -46,9 +41,7 @@
       </div>
     </nz-header>
     <nz-content>
-      <div class="inner-content">
-        <router-outlet></router-outlet>
-      </div>
+      <router-outlet></router-outlet>
     </nz-content>
   </nz-layout>
 </nz-layout>
