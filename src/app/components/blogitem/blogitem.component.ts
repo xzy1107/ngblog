@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NzCardModule } from 'ng-zorro-antd/card';
 @Component({
   selector: 'app-blogitem',
@@ -6,10 +6,14 @@ import { NzCardModule } from 'ng-zorro-antd/card';
   styleUrls: ['./blogitem.component.css']
 })
 export class BlogitemComponent implements OnInit {
+  
+  @Input() loading: boolean;
+  @Input() post: any[];
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

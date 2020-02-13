@@ -123,9 +123,16 @@
               "devServerTarget": "ngblog:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "ngblog"
+  "defaultProject": "ngblog",
+  "cli": {
+    "analytics": false
+  }
 }

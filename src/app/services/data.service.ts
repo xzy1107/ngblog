@@ -1,3 +1,4 @@
+import { Post } from './../models/post.model';
 import { environment } from './../../environments/environment.prod';
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -21,6 +22,9 @@ export class DataService implements OnInit{
   }
   getSiteName(): Observable<any> {
     return this.http.get<any>(this.baseUrl+"/wp-json")
+  }
+  getRecentPosts(): Observable<any> {
+    return this.http.get<any>(this.baseUrl+"/wp-json/wp/v2/posts?_fields=id,date,modified,slog,status,type,title,content,excerpt,author,categories,tags")
   }
 
   ngOnInit(){

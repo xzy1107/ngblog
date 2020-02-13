@@ -4,10 +4,12 @@ import { BlogitemComponent } from './blogitem.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
 
+
 @NgModule({
   declarations: [BlogitemComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NzCardModule
   ],
   exports: [
     BlogitemComponent
